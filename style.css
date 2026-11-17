@@ -1,0 +1,480 @@
+/* ========================================================
+   CSS Stylesheet for Personal Resume Website
+   Topics Covered:
+   - Box Model (margin, padding, border, box-sizing)
+   - Colors and Typography
+   - Display & Position properties (sticky, relative)
+   - Combining Selectors & Specificity
+   - Pseudo-selectors (:hover)
+   - Flexbox & Grid Layouts
+   - Media Queries for Responsiveness
+   ======================================================== */
+
+/* 1. Universal Box-Sizing & Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 2. Base HTML & Body Styles */
+body {
+  font-family: 'Poppins', Arial, sans-serif;
+  background-color: #f8fafc;
+  color: #334155;
+  line-height: 1.6;
+}
+
+/* Link Styling */
+a {
+  text-decoration: none;
+  color: #2563eb;
+}
+
+a:hover {
+  color: #1d4ed8;
+}
+
+/* List Reset */
+ul {
+  list-style: none;
+}
+
+/* 3. Reusable Container */
+.container {
+  width: 90%;
+  max-width: 1050px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* Section Titles */
+.section-title {
+  text-align: center;
+  font-size: 2rem;
+  color: #0f172a;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+/* 4. Navigation Bar (Position & Flexbox) */
+#header {
+  position: sticky;
+  top: 0;
+  background-color: #ffffff;
+  border-bottom: 1px solid #e2e8f0;
+  z-index: 100;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1050px;
+  margin: 0 auto;
+  padding: 1rem 15px;
+}
+
+.logo a {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+/* Combining Selector: ul inside nav */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.nav-links li a {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #475569;
+}
+
+/* Pseudo-selector */
+.nav-links li a:hover {
+  color: #2563eb;
+}
+
+.nav-btn {
+  background-color: #2563eb;
+  color: #ffffff !important;
+  padding: 6px 14px;
+  border-radius: 4px;
+}
+
+.nav-btn:hover {
+  background-color: #1d4ed8;
+}
+
+/* 5. Buttons (Display: inline-block) */
+.btn {
+  display: inline-block;
+  padding: 10px 22px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.btn-primary {
+  background-color: #2563eb;
+  color: #ffffff;
+}
+
+.btn-primary:hover {
+  background-color: #1d4ed8;
+  color: #ffffff;
+}
+
+.btn-secondary {
+  background-color: #e2e8f0;
+  color: #0f172a;
+  margin-left: 10px;
+}
+
+.btn-secondary:hover {
+  background-color: #cbd5e1;
+}
+
+/* 6. Hero Section (Flexbox Layout) */
+#hero {
+  padding: 4.5rem 0;
+  background-color: #ffffff;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.hero-layout {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.hero-text {
+  flex: 1.2;
+}
+
+.badge {
+  display: inline-block;
+  background-color: #dbeafe;
+  color: #1e40af;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 20px;
+  margin-bottom: 1rem;
+}
+
+.hero-text h1 {
+  font-size: 2.8rem;
+  color: #0f172a;
+  line-height: 1.2;
+  margin-bottom: 0.5rem;
+}
+
+.highlight {
+  color: #2563eb;
+}
+
+.hero-text h2 {
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: #64748b;
+  margin-bottom: 1rem;
+}
+
+.hero-text p {
+  color: #475569;
+  font-size: 1rem;
+  margin-bottom: 1.8rem;
+}
+
+.hero-buttons {
+  margin-top: 1rem;
+}
+
+.hero-image-box {
+  flex: 0.8;
+  display: flex;
+  justify-content: center;
+}
+
+.image-wrapper {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 4px solid #2563eb;
+}
+
+.profile-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* 7. About Section (Grid Layout) */
+#about {
+  padding: 4rem 0;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.about-card {
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.about-card h3 {
+  color: #0f172a;
+  margin-bottom: 0.75rem;
+  font-size: 1.15rem;
+}
+
+.about-card p {
+  color: #64748b;
+  font-size: 0.92rem;
+}
+
+/* 8. Experience Section */
+#experience {
+  padding: 4rem 0;
+  background-color: #ffffff;
+  border-top: 1px solid #e2e8f0;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.experience-card {
+  background-color: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 1.8rem;
+  margin-bottom: 1.5rem;
+}
+
+.exp-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+.exp-role {
+  font-size: 1.2rem;
+  color: #0f172a;
+}
+
+.exp-company {
+  font-size: 1rem;
+  color: #2563eb;
+  font-weight: 500;
+}
+
+.exp-date {
+  font-size: 0.85rem;
+  color: #64748b;
+  background-color: #ffffff;
+  padding: 4px 10px;
+  border-radius: 4px;
+  border: 1px solid #cbd5e1;
+}
+
+.exp-points {
+  margin-left: 1.2rem;
+  margin-bottom: 1rem;
+  list-style-type: disc;
+}
+
+.exp-points li {
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+  color: #334155;
+}
+
+/* Span & Display Properties */
+.tags {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.tag {
+  display: inline-block;
+  background-color: #e2e8f0;
+  color: #1e293b;
+  font-size: 0.8rem;
+  padding: 3px 10px;
+  border-radius: 12px;
+}
+
+/* 9. Projects Section (CSS Grid) */
+#projects {
+  padding: 4rem 0;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.project-card {
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 1.5rem;
+}
+
+.project-card:hover {
+  border-color: #94a3b8;
+}
+
+.project-type {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #2563eb;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.project-card h3 {
+  font-size: 1.15rem;
+  color: #0f172a;
+  margin-bottom: 0.6rem;
+}
+
+.project-card p {
+  font-size: 0.9rem;
+  color: #64748b;
+}
+
+/* 10. Skills Section (Flexbox Layout) */
+#skills {
+  padding: 4rem 0;
+  background-color: #ffffff;
+  border-top: 1px solid #e2e8f0;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.skills-wrapper {
+  display: flex;
+  gap: 2rem;
+}
+
+.skills-column {
+  flex: 1;
+  background-color: #f8fafc;
+  padding: 1.8rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+}
+
+.skills-column h3 {
+  color: #0f172a;
+  margin-bottom: 1.2rem;
+  font-size: 1.15rem;
+}
+
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.skills-list li {
+  background-color: #ffffff;
+  color: #1e293b;
+  border: 1px solid #cbd5e1;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.88rem;
+}
+
+.skills-list li:hover {
+  background-color: #2563eb;
+  color: #ffffff;
+  border-color: #2563eb;
+}
+
+/* 11. Contact Section */
+#contact {
+  padding: 4rem 0;
+  text-align: center;
+}
+
+.contact-box {
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 2.5rem;
+}
+
+.contact-box p {
+  color: #475569;
+  margin-bottom: 1.5rem;
+}
+
+.contact-details p {
+  margin-bottom: 0.8rem;
+  font-size: 1rem;
+}
+
+.contact-details a {
+  font-weight: 500;
+}
+
+/* 12. Footer */
+#footer {
+  background-color: #0f172a;
+  color: #94a3b8;
+  padding: 1.5rem 0;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+/* 13. Media Queries (Responsive Design Topic) */
+@media (max-width: 768px) {
+  .hero-layout {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+
+  .nav-container {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .about-grid,
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .skills-wrapper {
+    flex-direction: column;
+  }
+
+  .exp-header {
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+}
